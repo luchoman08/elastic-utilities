@@ -1,5 +1,7 @@
 <template>
   <div class="hello">
+    <search-result-to-bulk-insert></search-result-to-bulk-insert>
+
     <h1>{{ msg }}</h1>
     <p>
       For a guide and recipes on how to configure / customize this project,<br />
@@ -120,8 +122,12 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
-
-@Component
+import SearchResultToBulkInsert from "./SearchResultToBulkInsert.vue";
+@Component({
+  components: {
+    SearchResultToBulkInsert
+  }
+})
 export default class HelloWorld extends Vue {
   @Prop() private msg!: string;
 }
